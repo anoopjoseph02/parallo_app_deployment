@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: parallo-app-pod 
-          image: aksdevopsacr.azurecr.io/app1nginxaks
+          image: paralloregistry.azurecr.io/app1nginxaks
           ports:
           - containerPort: 80
