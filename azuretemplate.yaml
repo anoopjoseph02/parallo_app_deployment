@@ -58,7 +58,7 @@ stages:
             displayName: list files
             inputs:
               targetType: 'inline'
-              script: pwd    
+              script: pwd;ls -l   
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
             inputs:
