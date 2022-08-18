@@ -54,8 +54,20 @@ stages:
       runOnce:
         deploy:
           steps:
+            - task: Bash@3
+              inputs:
+              targetType: 'inline'
+              script: pwd
+                      ls -l
+          steps:
           #- task: KubernetesManifest@0
           #  displayName: Create imagePullSecret
+          #  inputs:
+           #   action: createSecret
+           #   secretName: $(imagePullSecret)
+           #   dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+            #- task: KubernetesManifest@0
+          #  displayName: list files
           #  inputs:
            #   action: createSecret
            #   secretName: $(imagePullSecret)
