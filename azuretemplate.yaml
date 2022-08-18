@@ -1,8 +1,6 @@
 trigger:
+- main
 - master
-
-resources:
-- repo: self
 
 variables:
 
@@ -12,7 +10,6 @@ variables:
   containerRegistry: 'paralloregistry.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  #imagePullSecret: 'aksdevopsacr21364011-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -62,7 +59,5 @@ stages:
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yaml
                 $(Pipeline.Workspace)/manifests/service.yaml
-              #imagePullSecrets: |
-                #$(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
