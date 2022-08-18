@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: parallo-app 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parallo-app
+  template:
+    metadata:
+      labels:
+        app: parallo-app 
+    spec:
+      containers:
+        - name: parallo-app-pod 
+          image: aksdevopsacr.azurecr.io/app1nginxaks
+          ports:
+          - containerPort: 80
