@@ -59,7 +59,7 @@ stages:
               targetType: 'inline'
               script: pwd
                       ls -l
-          steps:
+          #steps:
           #- task: KubernetesManifest@0
           #  displayName: Create imagePullSecret
           #  inputs:
